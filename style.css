@@ -1,0 +1,498 @@
+:root {
+  --ice: #f4fefd;
+  --navy: #003554;
+  --dark: #182223;
+  --black: #000000;
+  --accent: #00b4d8;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--dark);
+  color: var(--ice);
+  font-family: "Syne", sans-serif;
+  overflow-x: hidden;
+}
+
+.font-mono {
+  font-family: "Space Mono", monospace;
+}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--navy);
+  border-radius: 4px;
+}
+
+/* ── NAVBAR ── */
+.navbar {
+  background-color: rgba(24, 34, 35, 0.88) !important;
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(244, 254, 253, 0.06);
+  transition: transform 0.35s ease;
+}
+.navbar.nav-hidden {
+  transform: translateY(-100%);
+}
+.navbar-brand {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--ice) !important;
+}
+.navbar-brand span {
+  color: var(--accent);
+}
+.nav-link {
+  font-family: "Space Mono", monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(244, 254, 253, 0.5) !important;
+  transition: color 0.2s;
+}
+.nav-link:hover {
+  color: var(--ice) !important;
+}
+.navbar-toggler {
+  border-color: rgba(244, 254, 253, 0.2);
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(244,254,253,0.6)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* ── SECTION LABELS ── */
+.section-label {
+  font-family: "Space Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+.section-label::before {
+  content: "";
+  display: inline-block;
+  width: 1.5rem;
+  height: 1px;
+  background: var(--accent);
+}
+
+.section-title {
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+/* ── HERO ── */
+#inicio {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: auto;
+  position: relative;
+  overflow: hidden;
+}
+.hero-watermark {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Space Mono", monospace;
+  font-size: clamp(7rem, 22vw, 19rem);
+  font-weight: 700;
+  color: rgba(0, 53, 84, 0.45);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  filter: blur(6px);
+  -webkit-filter: blur(6px);
+}
+.hero-title {
+  font-size: clamp(3.2rem, 9vw, 6rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.hero-title .muted {
+  color: rgba(244, 254, 253, 0.28);
+}
+.hero-desc {
+  color: rgba(244, 254, 253, 0.58);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  font-weight: 400;
+  max-width: 480px;
+}
+
+/* ── FOTO HERO ── */
+.hero-photo {
+  width: 340px;
+  height: 340px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 180, 216, 0.35);
+  box-shadow:
+    0 0 0 8px rgba(0, 180, 216, 0.07),
+    0 0 60px rgba(0, 53, 84, 0.5);
+  position: relative;
+  z-index: 1;
+}
+
+/* ── BUTTONS ── */
+.btn-main {
+  font-family: "Space Mono", monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  background-color: var(--navy);
+  color: var(--ice);
+  border: 1px solid rgba(244, 254, 253, 0.12);
+  padding: 0.75rem 1.8rem;
+  border-radius: 4px;
+  transition:
+    background 0.2s,
+    border-color 0.2s;
+  text-decoration: none;
+  display: inline-block;
+}
+.btn-main:hover {
+  background-color: #004a73;
+  border-color: rgba(244, 254, 253, 0.28);
+  color: var(--ice);
+}
+.btn-ghost {
+  font-family: "Space Mono", monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: rgba(244, 254, 253, 0.48);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+.btn-ghost:hover {
+  color: var(--ice);
+}
+
+/* ── DIVIDER ── */
+.section-divider {
+  border-color: rgba(244, 254, 253, 0.06);
+  margin: 0;
+}
+
+/* ── SOBRE MÍ ── */
+#sobre {
+  padding: 6rem 0;
+}
+
+.skill-card {
+  background-color: rgba(0, 53, 84, 0.28);
+  border: 1px solid rgba(244, 254, 253, 0.07);
+  border-radius: 6px;
+  padding: 1rem 1.1rem;
+}
+.skill-card .skill-name {
+  font-family: "Space Mono", monospace;
+  font-size: 0.82rem;
+  color: var(--ice);
+  margin-bottom: 0.25rem;
+}
+.skill-card .skill-level {
+  font-family: "Space Mono", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.sobre-text p {
+  color: rgba(244, 254, 253, 0.6);
+  font-size: 0.97rem;
+  line-height: 1.8;
+  font-weight: 400;
+}
+.sobre-text strong {
+  color: var(--ice);
+  font-weight: 600;
+}
+
+/* ── FOTO MOBILE (Sobre mí) ── */
+.profile-photo-mobile {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 180, 216, 0.35);
+  box-shadow: 0 0 0 6px rgba(0, 180, 216, 0.07);
+}
+
+/* ── PROYECTOS ── */
+#proyectos {
+  background-color: #111819;
+  padding: 6rem 0;
+}
+.project-card {
+  background-color: var(--dark);
+  border: 1px solid rgba(244, 254, 253, 0.07);
+  border-radius: 8px;
+  overflow: hidden;
+  height: 100%;
+  transition:
+    transform 0.25s,
+    border-color 0.25s;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 180, 216, 0.4);
+}
+.project-thumb {
+  height: 175px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.8rem;
+  position: relative;
+  overflow: hidden;
+}
+.project-thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 53, 84, 0.55) 0%,
+    transparent 100%
+  );
+}
+.project-thumb-icon {
+  position: relative;
+  z-index: 1;
+}
+.project-tipo {
+  font-family: "Space Mono", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+}
+.project-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.5rem;
+}
+.project-desc {
+  font-size: 0.85rem;
+  line-height: 1.65;
+  color: rgba(244, 254, 253, 0.5);
+  font-weight: 400;
+}
+.badge-tech {
+  font-family: "Space Mono", monospace;
+  font-size: 0.62rem;
+  background-color: rgba(0, 53, 84, 0.5);
+  border: 1px solid rgba(244, 254, 253, 0.08);
+  color: rgba(244, 254, 253, 0.55);
+  padding: 0.22rem 0.55rem;
+  border-radius: 3px;
+  letter-spacing: 0.04em;
+}
+.badge-wip {
+  font-family: "Space Mono", monospace;
+  font-size: 0.62rem;
+  background-color: rgba(0, 180, 216, 0.15);
+  border: 1px solid rgba(0, 180, 216, 0.3);
+  color: var(--accent);
+  padding: 0.22rem 0.55rem;
+  border-radius: 3px;
+}
+.card-ghost {
+  opacity: 0.38;
+  pointer-events: none;
+}
+
+/* Link "Ver sitio" en card */
+.btn-project-link {
+  font-family: "Space Mono", monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border-bottom: 1px solid rgba(0, 180, 216, 0.3);
+  padding-bottom: 0.1rem;
+  transition:
+    border-color 0.2s,
+    color 0.2s;
+}
+.btn-project-link:hover {
+  color: var(--ice);
+  border-color: var(--ice);
+}
+
+/* ── LOGOS EN CARDS ── */
+.project-logo {
+  max-width: 65%;
+  max-height: 100px;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+}
+
+/* ── SERVICIOS ── */
+#servicios {
+  padding: 6rem 0;
+}
+.service-card {
+  border: 1px solid rgba(244, 254, 253, 0.07);
+  border-radius: 8px;
+  padding: 2.2rem 1.8rem;
+  height: 100%;
+  transition: border-color 0.25s;
+}
+.service-card:hover {
+  border-color: rgba(0, 53, 84, 0.9);
+}
+.service-num {
+  font-family: "Space Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: rgba(244, 254, 253, 0.18);
+  margin-bottom: 1.2rem;
+}
+.service-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.6rem;
+}
+.service-desc {
+  font-size: 0.86rem;
+  line-height: 1.7;
+  color: rgba(244, 254, 253, 0.5);
+  font-weight: 400;
+}
+
+/* ── CONTACTO ── */
+#contacto {
+  background-color: var(--navy);
+  padding: 6rem 0;
+  text-align: center;
+}
+.contact-email {
+  font-family: "Space Mono", monospace;
+  font-size: clamp(1.1rem, 3vw, 1.6rem);
+  color: var(--ice);
+  border-bottom: 1px solid rgba(244, 254, 253, 0.3);
+  padding-bottom: 0.2rem;
+  text-decoration: none;
+  transition: border-color 0.2s;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+.contact-email:hover {
+  border-color: var(--ice);
+  color: var(--ice);
+}
+.contact-sub {
+  font-size: 1rem;
+  color: rgba(244, 254, 253, 0.58);
+  font-weight: 400;
+}
+
+/* ── FOOTER ── */
+footer {
+  background-color: var(--black);
+  border-top: 1px solid rgba(244, 254, 253, 0.05);
+  padding: 1.4rem 0;
+}
+footer .logo {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+footer .logo span {
+  color: var(--accent);
+}
+footer p {
+  font-family: "Space Mono", monospace;
+  font-size: 0.68rem;
+  color: rgba(244, 254, 253, 0.22);
+  margin: 0;
+}
+
+/* ── REVEAL ANIMATION ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── REDES SOCIALES (contacto) ── */
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 6px;
+  border: 1px solid rgba(244, 254, 253, 0.15);
+  color: rgba(244, 254, 253, 0.55);
+  font-size: 1.15rem;
+  text-decoration: none;
+  transition:
+    color 0.2s,
+    border-color 0.2s,
+    background 0.2s;
+}
+.social-link:hover {
+  color: var(--ice);
+  border-color: var(--accent);
+  background-color: rgba(0, 180, 216, 0.08);
+}
+
+/* ── REDES SOCIALES (footer) ── */
+.social-link-footer {
+  color: rgba(244, 254, 253, 0.25);
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.social-link-footer:hover {
+  color: var(--accent);
+}
+
+/* ── TYPING CURSOR ── */
+.typing-cursor {
+  display: inline-block;
+  color: var(--accent);
+  font-weight: 700;
+  animation: none; /* controlado por JS */
+}
