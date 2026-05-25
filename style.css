@@ -431,6 +431,7 @@ footer .logo {
   font-family: "Space Mono", monospace;
   font-weight: 700;
   font-size: 0.95rem;
+  color: rgba(244, 254, 253, 0.55);
 }
 footer .logo span {
   color: var(--accent);
@@ -438,7 +439,8 @@ footer .logo span {
 footer p {
   font-family: "Space Mono", monospace;
   font-size: 0.68rem;
-  color: rgba(244, 254, 253, 0.45);
+  color: rgba(244, 254, 253, 0.55);
+
   margin: 0;
 }
 
