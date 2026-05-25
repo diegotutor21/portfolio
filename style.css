@@ -130,7 +130,7 @@ body {
   letter-spacing: -0.03em;
 }
 .hero-title .muted {
-  color: rgba(244, 254, 253, 0.28);
+  color: rgba(244, 254, 253, 0.45);
 }
 .hero-desc {
   color: rgba(244, 254, 253, 0.58);
@@ -438,7 +438,7 @@ footer .logo span {
 footer p {
   font-family: "Space Mono", monospace;
   font-size: 0.68rem;
-  color: rgba(244, 254, 253, 0.22);
+  color: rgba(244, 254, 253, 0.45);
   margin: 0;
 }
 
